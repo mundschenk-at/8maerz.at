@@ -4015,7 +4015,7 @@ p > object:only-child {
 
 	.site-footer .widget-column.footer-widget-2 {
 		float: right;
-		width: 69%;
+		width: 58%;
 	}
 
 	.social-navigation {
@@ -4028,7 +4028,7 @@ p > object:only-child {
 	.site-info {
 		float: left;
 		padding: 0.7em 0 0;
-		width: 69%;
+		width: 58%;
 	}
 
 	.social-navigation + .site-info {
