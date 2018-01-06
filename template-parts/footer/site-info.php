@@ -10,5 +10,5 @@
 
 ?>
 <div class="site-info">
-	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyseventeen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyseventeen' ), 'WordPress' ); ?></a>
+	Alles rund um den 8. März 2018 in Wien.
 </div><!-- .site-info -->

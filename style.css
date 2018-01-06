@@ -1582,7 +1582,6 @@ body {
 	letter-spacing: 0.08em;
 	margin: 0;
 	padding: 0;
-	text-transform: uppercase;
 }
 
 .site-title,
@@ -1814,8 +1813,8 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 }
 
 .panel-content .wrap {
-	padding-bottom: 0.5em;
-	padding-top: 1.75em;
+	padding-bottom: 1.5em;
+	padding-top: 3em;
 }
 
 /* Panel edit link */
@@ -3356,7 +3355,7 @@ p > object:only-child {
 
 	.has-sidebar:not(.error404) #primary {
 		float: left;
-		width: 58%;
+		width: 69%;
 	}
 
 	.has-sidebar #secondary {
@@ -3739,12 +3738,12 @@ p > object:only-child {
 
 	.page-two-column .panel-content .entry-header {
 		float: left;
-		width: 36%;
+		width: 25%;
 	}
 
 	.page-two-column .panel-content .entry-content {
 		float: right;
-		width: 58%;
+		width: 69%;
 	}
 
 	/* Front Page - Recent Posts */
@@ -3752,7 +3751,7 @@ p > object:only-child {
 	.page-two-column .panel-content .recent-posts {
 		clear: right;
 		float: right;
-		width: 58%;
+		width: 69%;
 	}
 
 	.panel-content .recent-posts article {
@@ -3823,7 +3822,7 @@ p > object:only-child {
 	body.page-two-column:not(.archive) #primary .entry-header,
 	body.page-two-column.archive:not(.has-sidebar) #primary .page-header {
 		float: left;
-		width: 36%;
+		width: 25%;
 	}
 
 	.blog:not(.has-sidebar) #primary article,
@@ -3834,7 +3833,7 @@ p > object:only-child {
 	body.page-two-column:not(.archive) #primary .entry-content,
 	body.page-two-column #comments {
 		float: right;
-		width: 58%;
+		width: 69%;
 	}
 
 	.blog .site-main > article,
@@ -3846,7 +3845,7 @@ p > object:only-child {
 	.navigation.pagination {
 		clear: both;
 		float: right;
-		width: 58%;
+		width: 69%;
 	}
 
 	.has-sidebar .navigation.pagination,
@@ -4016,7 +4015,7 @@ p > object:only-child {
 
 	.site-footer .widget-column.footer-widget-2 {
 		float: right;
-		width: 58%;
+		width: 69%;
 	}
 
 	.social-navigation {
@@ -4029,7 +4028,7 @@ p > object:only-child {
 	.site-info {
 		float: left;
 		padding: 0.7em 0 0;
-		width: 58%;
+		width: 69%;
 	}
 
 	.social-navigation + .site-info {
