@@ -102,7 +102,9 @@ function achtermaerz_custom_colors_css() {
 .colors-custom button,
 .colors-custom input[type="button"],
 .colors-custom input[type="submit"],
-.colors-custom .entry-footer .edit-link a.post-edit-link {
+.colors-custom .entry-footer .edit-link a.post-edit-link,
+.colors-custom .tribe-events-button,
+.colors-custom #tribe-events .tribe-events-button {
 	background-color: hsl( ' . $hue . ', ' . $saturation . ', 13% ); /* base: #222; */
 }
 
@@ -220,7 +222,9 @@ body.colors-custom,
 .colors-custom .format-quote blockquote,
 .colors-custom .nav-title,
 .colors-custom .comment-body,
-.colors-custom .site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-album {
+.colors-custom .site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-album,
+.colors-custom .tribe-events-button,
+.colors-custom #tribe-events .tribe-events-button {
 	color: hsl( ' . $hue . ', ' . $reduced_saturation . ', 20% ); /* base: #333; */
 }
 
@@ -316,7 +320,9 @@ body.colors-custom,
 .colors-custom .next.page-numbers:focus,
 .colors-custom .next.page-numbers:hover,
 .colors-custom .site-content .wp-playlist-light .wp-playlist-item:hover,
-.colors-custom .site-content .wp-playlist-light .wp-playlist-item:focus {
+.colors-custom .site-content .wp-playlist-light .wp-playlist-item:focus,
+.colors-custom .tribe-events-button:hover,
+.colors-custom #tribe-events .tribe-events-button:hover {
 	background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 46% ); /* base: #767676; */
 }
 
@@ -447,7 +453,9 @@ body.colors-custom,
 .colors-custom.has-header-image .site-title a,
 .colors-custom.has-header-video .site-title a,
 .colors-custom.has-header-image .site-description,
-.colors-custom.has-header-video .site-description {
+.colors-custom.has-header-video .site-description,
+.colors-custom .tribe-events-button,
+.colors-custom #tribe-events .tribe-events-button {
 	color: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
 }
 
