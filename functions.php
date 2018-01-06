@@ -24,7 +24,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function twentyseventeen_setup() {
+function achtermaerz_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentyseventeen
@@ -104,7 +104,7 @@ function twentyseventeen_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, and column width.
  	 */
-	add_editor_style( array( 'assets/css/editor-style.css', twentyseventeen_fonts_url() ) );
+	add_editor_style( array( 'assets/css/editor-style.css', achtermaerz_fonts_url() ) );
 
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content = array(
@@ -210,11 +210,11 @@ function twentyseventeen_setup() {
 	 *
 	 * @param array $starter_content Array of starter content.
 	 */
-	$starter_content = apply_filters( 'twentyseventeen_starter_content', $starter_content );
+	$starter_content = apply_filters( 'achtermaerz_starter_content', $starter_content );
 
 	add_theme_support( 'starter-content', $starter_content );
 }
-add_action( 'after_setup_theme', 'twentyseventeen_setup' );
+add_action( 'after_setup_theme', 'achtermaerz_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -223,7 +223,7 @@ add_action( 'after_setup_theme', 'twentyseventeen_setup' );
  *
  * @global int $content_width
  */
-function twentyseventeen_content_width() {
+function achtermaerz_content_width() {
 
 	$content_width = $GLOBALS['content_width'];
 
@@ -232,7 +232,7 @@ function twentyseventeen_content_width() {
 
 	// Check if layout is one column.
 	if ( 'one-column' === $page_layout ) {
-		if ( twentyseventeen_is_frontpage() ) {
+		if ( achtermaerz_is_frontpage() ) {
 			$content_width = 644;
 		} elseif ( is_page() ) {
 			$content_width = 740;
@@ -251,14 +251,14 @@ function twentyseventeen_content_width() {
 	 *
 	 * @param int $content_width Content width in pixels.
 	 */
-	$GLOBALS['content_width'] = apply_filters( 'twentyseventeen_content_width', $content_width );
+	$GLOBALS['content_width'] = apply_filters( 'achtermaerz_content_width', $content_width );
 }
-add_action( 'template_redirect', 'twentyseventeen_content_width', 0 );
+add_action( 'template_redirect', 'achtermaerz_content_width', 0 );
 
 /**
  * Register custom fonts.
  */
-function twentyseventeen_fonts_url() {
+function achtermaerz_fonts_url() {
 	$fonts_url = '';
 
 	/*
@@ -293,7 +293,7 @@ function twentyseventeen_fonts_url() {
  * @param string $relation_type  The relation type the URLs are printed.
  * @return array $urls           URLs to print for resource hints.
  */
-function twentyseventeen_resource_hints( $urls, $relation_type ) {
+function achtermaerz_resource_hints( $urls, $relation_type ) {
 	if ( wp_style_is( 'twentyseventeen-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 		$urls[] = array(
 			'href' => 'https://fonts.gstatic.com',
@@ -303,14 +303,14 @@ function twentyseventeen_resource_hints( $urls, $relation_type ) {
 
 	return $urls;
 }
-add_filter( 'wp_resource_hints', 'twentyseventeen_resource_hints', 10, 2 );
+add_filter( 'wp_resource_hints', 'achtermaerz_resource_hints', 10, 2 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function twentyseventeen_widgets_init() {
+function achtermaerz_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Blog Sidebar', 'twentyseventeen' ),
 		'id'            => 'sidebar-1',
@@ -341,7 +341,7 @@ function twentyseventeen_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
+add_action( 'widgets_init', 'achtermaerz_widgets_init' );
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
@@ -352,7 +352,7 @@ add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
  * @param string $link Link to single post/page.
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
-function twentyseventeen_excerpt_more( $link ) {
+function achtermaerz_excerpt_more( $link ) {
 	if ( is_admin() ) {
 		return $link;
 	}
@@ -364,7 +364,7 @@ function twentyseventeen_excerpt_more( $link ) {
 	);
 	return ' &hellip; ' . $link;
 }
-add_filter( 'excerpt_more', 'twentyseventeen_excerpt_more' );
+add_filter( 'excerpt_more', 'achtermaerz_excerpt_more' );
 
 /**
  * Handles JavaScript detection.
@@ -373,25 +373,25 @@ add_filter( 'excerpt_more', 'twentyseventeen_excerpt_more' );
  *
  * @since Twenty Seventeen 1.0
  */
-function twentyseventeen_javascript_detection() {
+function achtermaerz_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'twentyseventeen_javascript_detection', 0 );
+add_action( 'wp_head', 'achtermaerz_javascript_detection', 0 );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function twentyseventeen_pingback_header() {
+function achtermaerz_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
 	}
 }
-add_action( 'wp_head', 'twentyseventeen_pingback_header' );
+add_action( 'wp_head', 'achtermaerz_pingback_header' );
 
 /**
  * Display custom color CSS.
  */
-function twentyseventeen_colors_css_wrap() {
+function achtermaerz_colors_css_wrap() {
 	if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
 		return;
 	}
@@ -400,17 +400,17 @@ function twentyseventeen_colors_css_wrap() {
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 ?>
 	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
-		<?php echo twentyseventeen_custom_colors_css(); ?>
+		<?php echo achtermaerz_custom_colors_css(); ?>
 	</style>
 <?php }
-add_action( 'wp_head', 'twentyseventeen_colors_css_wrap' );
+add_action( 'wp_head', 'achtermaerz_colors_css_wrap' );
 
 /**
  * Enqueue scripts and styles.
  */
-function twentyseventeen_scripts() {
+function achtermaerz_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'twentyseventeen-fonts', twentyseventeen_fonts_url(), array(), null );
+	wp_enqueue_style( 'twentyseventeen-fonts', achtermaerz_fonts_url(), array(), null );
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
@@ -436,28 +436,28 @@ function twentyseventeen_scripts() {
 
 	wp_enqueue_script( 'twentyseventeen-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
-	$twentyseventeen_l10n = array(
-		'quote'          => twentyseventeen_get_svg( array( 'icon' => 'quote-right' ) ),
+	$achtermaerz_l10n = array(
+		'quote'          => achtermaerz_get_svg( array( 'icon' => 'quote-right' ) ),
 	);
 
 	if ( has_nav_menu( 'top' ) ) {
 		wp_enqueue_script( 'twentyseventeen-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array( 'jquery' ), '1.0', true );
-		$twentyseventeen_l10n['expand']         = __( 'Expand child menu', 'twentyseventeen' );
-		$twentyseventeen_l10n['collapse']       = __( 'Collapse child menu', 'twentyseventeen' );
-		$twentyseventeen_l10n['icon']           = twentyseventeen_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
+		$achtermaerz_l10n['expand']         = __( 'Expand child menu', 'twentyseventeen' );
+		$achtermaerz_l10n['collapse']       = __( 'Collapse child menu', 'twentyseventeen' );
+		$achtermaerz_l10n['icon']           = achtermaerz_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
 	}
 
 	wp_enqueue_script( 'twentyseventeen-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
 
 	wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
 
-	wp_localize_script( 'twentyseventeen-skip-link-focus-fix', 'twentyseventeenScreenReaderText', $twentyseventeen_l10n );
+	wp_localize_script( 'twentyseventeen-skip-link-focus-fix', 'twentyseventeenScreenReaderText', $achtermaerz_l10n );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
+add_action( 'wp_enqueue_scripts', 'achtermaerz_scripts' );
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -470,7 +470,7 @@ add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
  *                      values in pixels (in that order).
  * @return string A source size value for use in a content image 'sizes' attribute.
  */
-function twentyseventeen_content_image_sizes_attr( $sizes, $size ) {
+function achtermaerz_content_image_sizes_attr( $sizes, $size ) {
 	$width = $size[0];
 
 	if ( 740 <= $width ) {
@@ -485,7 +485,7 @@ function twentyseventeen_content_image_sizes_attr( $sizes, $size ) {
 
 	return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'twentyseventeen_content_image_sizes_attr', 10, 2 );
+add_filter( 'wp_calculate_image_sizes', 'achtermaerz_content_image_sizes_attr', 10, 2 );
 
 /**
  * Filter the `sizes` value in the header image markup.
@@ -497,13 +497,13 @@ add_filter( 'wp_calculate_image_sizes', 'twentyseventeen_content_image_sizes_att
  * @param array  $attr   Array of the attributes for the image tag.
  * @return string The filtered header image HTML.
  */
-function twentyseventeen_header_image_tag( $html, $header, $attr ) {
+function achtermaerz_header_image_tag( $html, $header, $attr ) {
 	if ( isset( $attr['sizes'] ) ) {
 		$html = str_replace( $attr['sizes'], '100vw', $html );
 	}
 	return $html;
 }
-add_filter( 'get_header_image_tag', 'twentyseventeen_header_image_tag', 10, 3 );
+add_filter( 'get_header_image_tag', 'achtermaerz_header_image_tag', 10, 3 );
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -516,7 +516,7 @@ add_filter( 'get_header_image_tag', 'twentyseventeen_header_image_tag', 10, 3 );
  * @param array $size       Registered image size or flat array of height and width dimensions.
  * @return array The filtered attributes for the image markup.
  */
-function twentyseventeen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+function achtermaerz_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	if ( is_archive() || is_search() || is_home() ) {
 		$attr['sizes'] = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
 	} else {
@@ -525,7 +525,7 @@ function twentyseventeen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) 
 
 	return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnail_sizes_attr', 10, 3 );
+add_filter( 'wp_get_attachment_image_attributes', 'achtermaerz_post_thumbnail_sizes_attr', 10, 3 );
 
 /**
  * Use front-page.php when Front page displays is set to a static page.
@@ -536,10 +536,10 @@ add_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnai
  *
  * @return string The template to be used: blank if is_home() is true (defaults to index.php), else $template.
  */
-function twentyseventeen_front_page_template( $template ) {
+function achtermaerz_front_page_template( $template ) {
 	return is_home() ? '' : $template;
 }
-add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
+add_filter( 'frontpage_template',  'achtermaerz_front_page_template' );
 
 /**
  * Modifies tag cloud widget arguments to display all tags in the same font size
@@ -550,7 +550,7 @@ add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
  * @param array $args Arguments for tag cloud widget.
  * @return array The filtered arguments for tag cloud widget.
  */
-function twentyseventeen_widget_tag_cloud_args( $args ) {
+function achtermaerz_widget_tag_cloud_args( $args ) {
 	$args['largest']  = 1;
 	$args['smallest'] = 1;
 	$args['unit']     = 'em';
@@ -558,7 +558,7 @@ function twentyseventeen_widget_tag_cloud_args( $args ) {
 
 	return $args;
 }
-add_filter( 'widget_tag_cloud_args', 'twentyseventeen_widget_tag_cloud_args' );
+add_filter( 'widget_tag_cloud_args', 'achtermaerz_widget_tag_cloud_args' );
 
 /**
  * Implement the Custom Header feature.

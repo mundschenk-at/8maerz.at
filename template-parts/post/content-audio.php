@@ -15,7 +15,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		if ( is_sticky() && is_home() ) {
-			echo twentyseventeen_get_svg( array( 'icon' => 'thumb-tack' ) );
+			echo achtermaerz_get_svg( array( 'icon' => 'thumb-tack' ) );
 		}
 	?>
 	<header class="entry-header">
@@ -23,10 +23,10 @@
 			if ( 'post' === get_post_type() ) {
 				echo '<div class="entry-meta">';
 					if ( is_single() ) {
-						twentyseventeen_posted_on();
+						achtermaerz_posted_on();
 					} else {
-						echo twentyseventeen_time_link();
-						twentyseventeen_edit_link();
+						echo achtermaerz_time_link();
+						achtermaerz_edit_link();
 					};
 				echo '</div><!-- .entry-meta -->';
 			};
@@ -98,7 +98,7 @@
 
 	<?php
 	if ( is_single() ) {
-		twentyseventeen_entry_footer();
+		achtermaerz_entry_footer();
 	}
 	?>
 

@@ -20,13 +20,13 @@
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
 				<?php
-				echo twentyseventeen_time_link();
-				twentyseventeen_edit_link();
+				echo achtermaerz_time_link();
+				achtermaerz_edit_link();
 				?>
 			</div><!-- .entry-meta -->
 		<?php elseif ( 'page' === get_post_type() && get_edit_post_link() ) : ?>
 			<div class="entry-meta">
-				<?php twentyseventeen_edit_link(); ?>
+				<?php achtermaerz_edit_link(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 

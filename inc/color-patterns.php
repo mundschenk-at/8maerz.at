@@ -10,7 +10,7 @@
 /**
  * Generate the CSS for the current custom color scheme.
  */
-function twentyseventeen_custom_colors_css() {
+function achtermaerz_custom_colors_css() {
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 
 	/**
@@ -20,7 +20,7 @@ function twentyseventeen_custom_colors_css() {
 	 *
 	 * @param int $saturation Color saturation level.
 	 */
-	$saturation = absint( apply_filters( 'twentyseventeen_custom_colors_saturation', 50 ) );
+	$saturation = absint( apply_filters( 'achtermaerz_custom_colors_saturation', 50 ) );
 	$reduced_saturation = ( .8 * $saturation ) . '%';
 	$saturation = $saturation . '%';
 	$css = '
@@ -569,5 +569,5 @@ body.colors-custom,
 	 * @param int    $hue        The user's selected color hue.
 	 * @param string $saturation Filtered theme color saturation level.
 	 */
-	return apply_filters( 'twentyseventeen_custom_colors_css', $css, $hue, $saturation );
+	return apply_filters( 'achtermaerz_custom_colors_css', $css, $hue, $saturation );
 }
