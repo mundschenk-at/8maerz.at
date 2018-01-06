@@ -1,5 +1,5 @@
-=== Twenty Seventeen ===
-Contributors: the WordPress team
+=== 8maerz.at ===
+Contributors: Peter Putzer, the WordPress team
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
 Version: 1.4
