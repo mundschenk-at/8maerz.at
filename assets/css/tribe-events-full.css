@@ -2546,13 +2546,11 @@ input[name*='tribe-bar-']:-moz-placeholder {
 	}
 
 
-	/* Calendar view */
+/* Calendar view */
 .tribe-events-calendar thead th,
 .tribe-events-grid .tribe-grid-header .tribe-grid-content-wrap .column,
 .tribe-grid-header {
 	background-color: #ddd !important;
 	border-left-color: #bbb !important;
 	border-right-color: #bbb !important;
-}
-
 }
