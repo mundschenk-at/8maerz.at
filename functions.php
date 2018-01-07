@@ -561,6 +561,15 @@ function achtermaerz_widget_tag_cloud_args( $args ) {
 add_filter( 'widget_tag_cloud_args', 'achtermaerz_widget_tag_cloud_args' );
 
 /**
+ * Jänner statt Januar.
+ */
+function achtermaerz_austriandate(  $j, $req_format, $i, $gmt ) {
+	return str_replace( [ 'Januar', 'Februar' ], [ 'Jänner', 'Feber' ], $j );
+}
+add_filter( 'date_i18n', 'achtermaerz_austriandate', 10, 4);
+
+
+/**
  * Implement the Custom Header feature.
  */
 require get_parent_theme_file_path( '/inc/custom-header.php' );
