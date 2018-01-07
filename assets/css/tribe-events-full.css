@@ -2544,4 +2544,15 @@ input[name*='tribe-bar-']:-moz-placeholder {
 	.tribe-select2-results-views span.tribe-icon-map, .tribe-bar-views-list span.tribe-icon-map {
 		background-image: url(../images/events-bar/icon-map@2x.png);
 	}
+
+
+	/* Calendar view */
+.tribe-events-calendar thead th,
+.tribe-events-grid .tribe-grid-header .tribe-grid-content-wrap .column,
+.tribe-grid-header {
+	background-color: #ddd;
+	border-left-color: #bbb;
+	border-right-color: #bbb;
+}
+
 }
