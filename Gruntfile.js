@@ -144,7 +144,28 @@ module.exports = function(grunt) {
 					ext: '.min.css' },
 					]
 			}
-		}
+		},
+		postcss: {
+				options: {
+						map: true, // inline sourcemaps.
+						processors: [
+								require('autoprefixer')({
+										browsers: ['>1%', 'last 2 versions', 'IE 9', 'IE 10']
+								}) // add vendor prefixes
+						]
+				},
+				dev: {
+						files: [{
+								expand: true,
+								cwd: 'admin/css',
+								src: ['**/*.css'],
+								dest: 'admin/css',
+								ext: '.css'
+						}]
+				},
+		},
+
+
 	} );
 
 	grunt.registerTask( 'delegate', function() {
@@ -176,7 +197,8 @@ module.exports = function(grunt) {
       'newer:makepot',
       //'newer:jscs',
       //'newer:phpcs',
-      'newer:delegate:sass',
+			'newer:delegate:sass:dev',
+			'newer:postcss:dev',
       //'modernizr:dist',
       'newer:minify',
   ] );
