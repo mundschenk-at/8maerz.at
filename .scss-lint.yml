@@ -1,0 +1,3 @@
+lintsers:
+    NestingDepth:
+      ignore_parent_selectors: true

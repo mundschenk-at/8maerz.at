@@ -1,0 +1,21 @@
+{
+  "name": "8maerz.at",
+  "devDependencies": {
+    "grunt": "^1.0",
+    "grunt-cli": "^1.2",
+    "grunt-contrib-jshint": "^1.1",
+    "grunt-contrib-sass": "^1.0",
+    "grunt-contrib-uglify": "^3.3",
+    "grunt-jscs": "^3.0.1",
+    "grunt-modernizr": "^1.0",
+    "grunt-newer": "^1.2",
+    "grunt-phpcs": "^0.4",
+    "grunt-wp-i18n": "^1.0.0",
+    "load-grunt-tasks": "^3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mundschenk-at/8maerz.at/8maerz.at.git"
+  },
+  "license": "GPL-2.0+"
+}
