@@ -13,7 +13,7 @@
  * @return string
  */
 function achtermaerz_replace_tribe_events_calendar_stylesheet() {
-	return get_bloginfo( 'template_url' ) . '/assets/css/tribe-events-full.css';
+	return get_bloginfo( 'template_url' ) . '/assets/css/tribe-events-skeleton.css';
 }
 add_filter( 'tribe_events_stylesheet_url', 'achtermaerz_replace_tribe_events_calendar_stylesheet' );
 
