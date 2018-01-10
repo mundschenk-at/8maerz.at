@@ -14,12 +14,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-get_header();
-?>
-<div id="tribe-events-pg-template" class="tribe-events-pg-template">
-	<?php tribe_events_before_html(); ?>
-	<?php tribe_get_view(); ?>
-	<?php tribe_events_after_html(); ?>
-</div> <!-- #tribe-events-pg-template -->
-<?php
-get_footer();
+get_header(); ?>
+
+<div class="wrap">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+			<?php tribe_events_before_html(); ?>
+			<?php tribe_get_view(); ?>
+			<?php tribe_events_after_html(); ?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+</div><!-- .wrap -->
+
+<?php get_footer();

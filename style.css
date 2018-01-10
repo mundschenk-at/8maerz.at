@@ -3353,7 +3353,7 @@ p > object:only-child {
 		padding-right: 3em;
 	}
 
-	.has-sidebar:not(.error404) #primary {
+	.has-sidebar:not(.error404,.events-gridview) #primary {
 		float: left;
 		width: 69%;
 	}
@@ -3364,7 +3364,8 @@ p > object:only-child {
 		width: 36%;
 	}
 
-	.error404 #primary {
+	.error404 #primary,
+ 	.events-gridview #primary {
 		float: none;
 	}
 
