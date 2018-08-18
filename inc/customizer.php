@@ -26,6 +26,29 @@ function achtermaerz_customize_register( $wp_customize ) {
 		'render_callback' => 'achtermaerz_customize_partial_blogdescription',
 	) );
 
+	// Add special footer info.
+	$wp_customize->add_setting( 'achtermaerz_footer_description', [
+	  'type'                 => 'theme_mod', // or 'option'
+	  'capability'           => 'edit_theme_options',
+	  'theme_supports'       => '', // Rarely needed.
+	  'default'              => __( 'A clever quotation.', 'twentyseventeen' ),
+	  'transport'            => 'postMessage',
+	  'sanitize_callback'    => 'sanitize_text_field',
+	  'sanitize_js_callback' => '', // Basically to_json.
+	] );
+	$wp_customize->add_control( 'achtermaerz_footer_description', [
+		'type'            => 'text',
+		'priority'        => 100, // Within the section.
+		'section'         => 'title_tagline', // Required, core or custom.
+		'label'           => __( 'Footer Text', 'twentyseventeen' ),
+		'description'     => __( 'This text is displayed in the footer.', 'twentyseventeen' ),
+	] );
+	$wp_customize->selective_refresh->add_partial( 'achtermaerz_footer_description', [
+		'selector'        => 'footer > wrap > .site-info',
+		'setting'         => 'achtermaerz_footer_description', 
+		'render_callback' => 'achtermaerz_customize_partial_footer_description',
+	] );
+
 	/**
 	 * Custom colors.
 	 */
@@ -176,6 +199,18 @@ function achtermaerz_customize_partial_blogname() {
  */
 function achtermaerz_customize_partial_blogdescription() {
 	bloginfo( 'description' );
+}
+
+/**
+ * Render the site footer description for the selective refresh partial.
+ *
+ * @since 8maerz 1.0
+ * @see achtermaerz_customize_register()
+ *
+ * @return void
+ */
+function achtermaerz_customize_partial_footer_description() {
+	echo esc_html( get_theme_mod( 'achtermaerz_footer_description' ) );
 }
 
 /**

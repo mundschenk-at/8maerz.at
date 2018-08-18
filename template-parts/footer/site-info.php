@@ -8,7 +8,9 @@
  * @version 1.0
  */
 
+$footer_text = get_theme_mod( 'achtermaerz_footer_description', '' );
+
 ?>
 <div class="site-info">
-	Alles rund um den 8. März 2018 in Wien.
+	<?php echo esc_html( $footer_text ); ?>
 </div><!-- .site-info -->
