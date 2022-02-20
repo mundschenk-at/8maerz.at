@@ -105,7 +105,8 @@ function achtermaerz_custom_colors_css() {
 .colors-custom .entry-footer .edit-link a.post-edit-link,
 .colors-custom .tribe-events-button,
 .colors-custom #tribe-events .tribe-events-button {
-	background-color: hsl( ' . $hue . ', ' . $saturation . ', 13% ); /* base: #222; */
+	background-color: white;
+	/* background-color: hsl( ' . $hue . ', ' . $saturation . ', 13% ); */ /* base: #222; */
 }
 
 .colors-custom input[type="text"]:focus,
